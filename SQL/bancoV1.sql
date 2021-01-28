@@ -15,6 +15,12 @@ CREATE TABLE Pessoa(
     PRIMARY KEY(id)
 );
 
+create table exames_tipo (
+	id INT NOT NULL AUTO_INCREMENT,
+    nome varchar(100),
+    PRIMARY KEY(id)
+);
+
 CREATE TABLE Especialidade(
 	id INT NOT NULL UNIQUE AUTO_INCREMENT,
     nome VARCHAR(50),
@@ -77,10 +83,11 @@ CREATE TABLE Paciente(
 
 CREATE TABLE Exame(
 	id_servico INT NOT NULL,
-    tipo VARCHAR(100),
+    id_tipo INT NOT NULL,
     med_rec VARCHAR(100),
     PRIMARY KEY (id_servico),
-    FOREIGN KEY fk_exame_servico (id_servico) REFERENCES Servico(id)
+    FOREIGN KEY fk_exame_servico (id_servico) REFERENCES Servico(id),
+    FOREIGN KEY fk__exame__exame_tipo(id_tipo) REFERENCES exames_tipo(id)
 );
 /*Na tabela Exame, não foi implementado o atributo paciente, pois, não faz sentido*/
 
