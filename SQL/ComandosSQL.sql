@@ -19,6 +19,19 @@ WHERE s.hor_ini = '10:30:00' AND s.data = '2021-01-20';
 SELECT * FROM exames_tipo;
 
 /*Exemplos de Insert's*/
-insert into exames_tipo(nome)values ('Hemograma'), ('Ultrassonografia'), ('Eletrocardiograma'), ('Tonoscopia');
-insert into servico(id_especialidade, nome, data, hor_ini, hor_fim) values (1, 'exame normal', '2021-01-20', '10:30:00', '11:00:00');
-insert into exame values (5, 1, 'fulano');
+INSERT INTO exames_tipo(nome) VALUES ('Hemograma'), ('Ultrassonografia'), ('Eletrocardiograma'), ('Tonoscopia');
+INSERT INTO servico(id_especialidade, nome, data, hor_ini, hor_fim) VALUES (1, 'exame normal', '2021-01-20', '10:30:00', '11:00:00');
+INSERT INTO exame VALUES (5, 1, 'fulano');
+INSERT INTO especialidade (nome) VALUES ('Ortopedia'), ('Oftamologia'), ('Ginecologia'), ('Neurologia');
+INSERT INTO pessoa(nome, cpf, dt_nasc, email, telefone) VALUES ('Fulaninho', '000.000.000-09', '1980-10-01', 'fulaninho@gmail.com', 000000);
+INSERT INTO cargo(id_especialidade, nome, registro) VALUES (1, 'médico', '000.1');
+INSERT INTO pessoa(nome, cpf, dt_nasc, email, telefone) VALUES ('Fulaninho Segundo', '000.004.000-09', '1980-10-01', 'fulaniho@gmail.com', 90800);
+INSERT INTO cargo(id_especialidade, nome, registro) VALUES (14, 'médico', '003.1');
+INSERT INTO funcionario VALUES (2, 3, '08:00:00', 3000);
+
+/*Quais são as especialidades disponíveis na clínica?*/
+SELECT * FROM especialidade;
+
+/*Qual ou quais médicos são especilistas em Ortopedia?*/
+SELECT p.nome AS Nome, c.nome AS Cargo, e.nome AS Especialidade FROM pessoa AS p INNER JOIN funcionario AS f ON (p.id = f.id_pessoa)
+INNER JOIN cargo AS c ON (c.id=f.id_cargo) INNER JOIN especialidade AS e ON (c.id_especialidade = e.id) WHERE e.nome = 'Ortopedia';
