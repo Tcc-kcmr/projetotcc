@@ -17,13 +17,13 @@ CREATE TABLE Pessoa(
 
 create table exames_tipo (
 	id INT NOT NULL AUTO_INCREMENT,
-    nome varchar(100),
+    nome varchar(100) UNIQUE,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE Especialidade(
 	id INT NOT NULL UNIQUE AUTO_INCREMENT,
-    nome VARCHAR(50),
+    nome VARCHAR(50) UNIQUE,
     PRIMARY KEY(id)
 );
 
