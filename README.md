@@ -1,6 +1,6 @@
 # TCC
 #### _Seja Bem Vindo ao repositório de nosso TCC._
-_Grupo: Cleves, Kaiza, Maria Eunice e Rhuan. Turma: 3° TII "A"_
+> _Grupo: Cleves, Kaiza, Maria Eunice e Rhuan. Turma: 3° TII "A"_
 
 ## Divisão de Pastas
  As pastas, visando uma maior organização, foram divididas em 4:
