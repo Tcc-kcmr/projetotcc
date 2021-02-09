@@ -1,3 +1,5 @@
+
+/*menu*/
 nav {
 	margin: 20px auto 0;
 
@@ -69,11 +71,11 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 	left: 900px;
 	background-color: #e67e22;
 }
-
+/*
 body {
 	font-size: 12px;
-	font-family: sans-serif;
-	background: #B7D5E5;
+	font-family: Helvetica , sans-serif;
+	background: #ffffff;
 }
 h1 {
 	text-align: center;
@@ -82,7 +84,7 @@ h1 {
 	font-size: 50px;
 	color: #ecf0f1;
 	text-shadow: 2px 2px 4px #000000;
-	font-family: 'Bahnschrift', monospace;
+	font-family: 'Candara';
 }
 
 p {
@@ -99,95 +101,7 @@ span {
     color: #2BD6B4;
 }
 * {box-sizing:border-box}
-
-
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-
-.mySlides {
-  display: none;
-}
-
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-
-.text {
-       color: #000000;
-       font-size: 30px;
-     padding: 8px 12px;
-     position: absolute;
-     bottom: 8px;
-     width: 100%;
-      text-align: center;
-}
-
-.numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-  top: 0;
-}
-
-.dot {
-       cursor: pointer;
-       height: 15px;
-       width: 15px;
-      margin: 0 2px;
-       background-color: #bbb;
-       border-radius: 50%;
-       display: inline-block;
-        transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-
-.fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-         animation-name: fade;
-         animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-      from {opacity: .4}
-       to {opacity: 1}
-}
-
-@keyframes fade {
-      from {opacity: .4}
-       to {opacity: 1}
-}
+*/
 
 
 
@@ -203,19 +117,20 @@ span {
 .btn{
   position: relative;
   display: block;
-  color: white;
-  font-size: 14px;
-  font-family: "montserrat";
+  color: black;
+  font-size: 15px;
+  font-family: "arial";
   text-decoration: none;
   margin: 30px 0;
-  border: 2px solid #46ab5d;
-  padding: 14px 60px;
+  border: 1px solid #34495e;
+  padding: 20px 20px;
   text-transform: uppercase;
   overflow: hidden;
   transition: 1s all ease;
 }
+
 .btn::before{
-  background: #46ab5d;
+  background: #34495e;
   content: "";
   position: absolute;
   top: 50%;
@@ -225,14 +140,6 @@ span {
   transition: all 0.6s ease;
 }
 
-.btn1::before{
-  width: 0%;
-  height: 100%;
-}
-
-.btn1:hover::before{
-  width: 100%;
-}
 
 
 .btn2::before{
@@ -241,6 +148,175 @@ span {
 }
 .btn2:hover::before{
   height: 100%;
-    
 
+}
+.btn{
+    color: #000;
+}
+
+.btn:hover{
+    color: white;
+}
+
+/*album especialistas*/
+
+#album{
+	width: 700px;
+	margin: 0 auto;
+	padding: 50px;
+	overflow: hidden;
+	list-style: none;
+}
+
+#album li{
+	float: left;
+	width: 210px;
+	height: 210px;
+	margin: 10px;
+	border: 5px solid #ffffff;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 3px #606060;
+}
+
+#foto1{
+	background:url(imagens/cardiologista.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px; 
+	background-color: #ffffff;
+}
+
+#foto2{
+	background:url(imagens/gine.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px; 
+}
+
+#foto3{
+	background:url(imagens/clinico.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px; 
+	background-color: #ffffff;
+}
+
+#foto4{
+	background:url(imagens/psiqui.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: 400px 400px; 
+	background-color: #ffffff;
+}
+
+
+}
+
+#foto1:hover{
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+#foto2:hover{
+	background-position: 0px 0px;
+		background-size: 200px 200px;
+}
+
+#foto3:hover{
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+#foto4:hover{
+	background-position: 0px 0px;
+	background-size: 200px 200px;
+}
+
+
+
+#album li:hover{
+	transform: scale(1.5); 
+}
+
+#album li span{
+	color: #ffffff;
+	text-shadow: 1px 1px 1px black;
+	background-color: rgba(0,0,0,0.3);
+	font-size: 10pt;
+	line-height: 370px;
+	opacity: 0;
+}
+
+#album li:hover span{
+	opacity: 1;
+}
+   
+
+
+
+/*h3*/
+
+h3{
+
+	font-family: 'arial';
+	margin: 40px 0 40px;
+   font-size: 18px;
+   color: #808080;
+}
+
+h2{
+
+	font-family: 'arial';
+	margin: 40px 0 40px;
+   font-size: 15px;
+   color: #808080;
+}
+
+
+
+/*produtos exames*/
+
+.produtos{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+}
+
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color:#94d194;
+}
+
+.produtos img{
+    max-width: 250px;
+    max-height:250px;
+    width: auto;
+    height: auto;
+}
+
+.produtos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+.produto-preco{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.produto-descricao{
+  font-size: 18px;
+  padding-top: 30px; 
 }
