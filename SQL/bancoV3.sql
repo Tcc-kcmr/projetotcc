@@ -80,20 +80,20 @@ CREATE TABLE Consulta(
     FOREIGN KEY fk_consulta_servico (id_servico) REFERENCES Servico(id)
 );
 
-CREATE TABLE Cargo(
-	id INT NOT NULL UNIQUE AUTO_INCREMENT,
-    id_tipo INT,
-    registro VARCHAR(100),
-    PRIMARY KEY (id),
-    FOREIGN KEY fk__cargo__cargo_tipo (id_tipo) REFERENCES cargo_tipo(id)
-);
-
 CREATE TABLE Cargo_tipo(
 	id INT NOT NULL UNIQUE AUTO_INCREMENT,
     id_especialidade INT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY fk__cargo_tipo__especialidade (id_especialidade) REFERENCES especialidade(id)
+);
+
+CREATE TABLE Cargo(
+	id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    id_tipo INT NOT NULL,
+    registro VARCHAR(100),
+    PRIMARY KEY (id),
+    FOREIGN KEY fk__cargo__cargo_tipo (id_tipo) REFERENCES cargo_tipo(id)
 );
 
 CREATE TABLE Funcionario(
