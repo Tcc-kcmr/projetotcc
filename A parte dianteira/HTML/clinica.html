@@ -2,9 +2,6 @@
 <html lang="pt-br">
 <head>
 
-	
-
-
 	<meta charset="utf-8">
 	
    <title>Clinica Jequitiba</title> 
@@ -84,21 +81,21 @@
 
 
 
-/* Create three equal columns that floats next to each other */
+/* Crie três colunas iguais que flutuam lado a lado */
 .column {
   float: left;
   width: 33.33%;
   padding: 15px;
 }
 
-/* Clear floats after the columns */
+/* Limpe os flutuadores após as colunas*/
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/*  Layout responsivo - faz com que as três colunas sejam empilhadas uma em cima da outra, em vez de uma ao lado da outra * /*/
 @media screen and (max-width:600px) {
   .column {
     width: 100%;
@@ -158,3 +155,129 @@
         </li>
     </ul>
 </div>
+
+
+
+
+<script>
+    $(function() {
+    $('#checkbox').change(function () {
+        setInterval(function () {
+            moveRight();
+        }, 3000);
+    });
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    $('#slider').css({
+        width: slideWidth,
+        height: slideHeight
+    });
+    $('#slider ul').css({
+        width: sliderUlWidth,
+        marginLeft: -slideWidth
+    });
+    $('#slider ul li:last-child').prependTo('#slider ul');
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: +slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    function moveRight() {
+        $('#slider ul').animate({
+            left: -slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+});
+</script>
+
+ <main>
+
+             <center>
+     <h3>Os melhores exames você encontra aqui.</h3></center>
+
+ 	<ul class="produtos">
+            <li>
+                <h2>Colester</h2>
+                <img src="imagem/core.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+            <li>
+                <h2>Radiografia</h2>
+                <img src="imagem/radio.jpeg">
+                <p class="produo-descricao"> </p>
+               
+            </li>
+            <li>
+                <h2>Dna</h2>
+                <img src="imagem/dna.jpeg">
+                <p class="produto-descricao"></p>
+                
+            </li>
+
+           </ul>
+
+
+    </main>
+<main>
+    
+
+<ul class="produtos">
+
+      <li>
+                <h2>Exame de vista</h2>
+                <img src="imagem/visao.jpeg">
+                <p class="produto-descricao"></p>
+                
+            </li>
+            <li>
+                <h2>Exame de fezes</h2>
+                <img src="imagem/reme.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+            <li>
+                <h2>Glicose</h2>
+                <img src="imagem/lab.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+    
+
+</ul>
+</main>
+
+
+
+
+<div class="footer">
+  
+   <td > <div class="middle"><a  class="btn btn2"  href="file:///C:/Users/Usuario/Desktop/TCC2.0/teste222.html">Login</a>
+  </div>
+<div class="column">
+    <h2>Horario de funcionamento</h2>
+    <p>Das 7:00 da manhã ás 08:00 horas da noite.</p>
+  </div>
+  <div class="column">
+    <h2>Numero de telefone</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec 0000-0000.</p>
+  </div>
+</div>
+
+
+</body>
+</html>
