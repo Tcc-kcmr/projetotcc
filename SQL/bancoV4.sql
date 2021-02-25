@@ -47,20 +47,22 @@ CREATE TABLE Feedback(
 CREATE TABLE Servico(
 	id INT NOT NULL UNIQUE AUTO_INCREMENT,
     id_especialidade INT,
+    id_paciente INT,
     nome VARCHAR(50),
     data DATE,
     hor_ini TIME,
     hor_fim TIME,
     PRIMARY KEY(id),
-    FOREIGN KEY fk_servico_especialidade(id_especialidade) REFERENCES especialidade(id)
+    FOREIGN KEY fk_servico_especialidade(id_especialidade) REFERENCES especialidade(id),
+    FOREIGN KEY fk_servico_paciente(id_paciente) REFERENCES paciente(id_pessoa)
 );
 
 CREATE TABLE Paciente(
 	id_pessoa INT NOT NULL,
-    id_servico INT NOT NULL,
+    /*id_servico INT NOT NULL,*/
     PRIMARY KEY (id_pessoa),
-    foreign key fk_paciente_pessoa (id_pessoa) REFERENCES Pessoa(id),
-    foreign key fk_paciente_servico(id_servico) REFERENCES Servico(id)
+    foreign key fk_paciente_pessoa (id_pessoa) REFERENCES Pessoa(id)
+    /*foreign key fk_paciente_servico(id_servico) REFERENCES Servico(id)*/
 );
 
 CREATE TABLE Exame(
