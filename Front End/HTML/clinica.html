@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<meta charset="utf-8">
+	
+   <title>Clinica Jequitiba</title> 
+   <link rel="stylesheet" type="text/css" href="estilo.css">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+    	.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
+         html {
+        border-top: 5px solid #fff;
+        background: #f9f9f9;
+    }
+    #slider {
+        position: relative;
+        overflow: hidden;
+        margin: 20px auto 0 auto;
+        border-radius: 4px;
+    }
+    #slider ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        height: 200px;
+        list-style: none;
+    }
+    #slider ul li {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 1000px;
+        height: 500px;
+        background: #ccc;
+        text-align: center;
+        line-height: 300px;
+    }
+    a.control_prev, a.control_next {
+        position: absolute;
+        top: 40%;
+        z-index: 999;
+        display: block;
+        padding: 4% 3%;
+        width: auto;
+        height: auto;
+        background: #2a2a2a;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    a.control_prev:hover, a.control_next:hover {
+        opacity: 1;
+        -webkit-transition: all 0.2s ease;
+    }
+    a.control_prev {
+        border-radius: 0 2px 2px 0;
+    }
+    a.control_next {
+        right: 0;
+        border-radius: 2px 0 0 2px;
+    }
+    .slider_option {
+        position: relative;
+        margin: 10px auto;
+        width: 160px;
+        font-size: 18px;
+    }
+
+
+
+/* Crie três colunas iguais que flutuam lado a lado */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Limpe os flutuadores após as colunas*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*  Layout responsivo - faz com que as três colunas sejam empilhadas uma em cima da outra, em vez de uma ao lado da outra * /*/
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+    </style>
+    
+  </head>
+<body>
+
+  	<table>
+
+  <tr>
+   <td><img  width="100" height="100" src='imagens/Logo.jpg'/></td>
+    
+    <td> <h1>CLÍNICA MÉDICA JEQUITIBÁ </h1></td> 
+  
+</tr>
+
+
+</table>
+<nav>
+   <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/clinica.html">Home</a>
+   <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/formpage.html">Feedback</a>
+   <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/contato.html">Fale conosco</a>
+   <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/ALBUM.html">Especialistas</a>
+   <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/Agendar.html">Marcar Exame/consulta</a>
+   <div class="animation start-home"></div>
+</nav>
+
+
+</div>
+
+<div id="slider">
+    <a href="#" class="control_next">></a>
+    <a href="#" class="control_prev"><</a>
+    <ul>
+        <li>
+            <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/contato.html" target="_blank">
+                <img src="imagem/med.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/contato.html" target="_blank">
+                <img src="imagem/estra.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/contato.html" target="_blank">
+                <img src="imagem/lindo.jpeg"/>
+            </a>
+        </li>
+        <li>
+            <a href="file:///C:/Users/Usuario/Desktop/TCC2.0/contato.html" target="_blank">
+                <img src="imagem/prof.jpeg"/>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+<script>
+    $(function() {
+    $('#checkbox').change(function () {
+        setInterval(function () {
+            moveRight();
+        }, 3000);
+    });
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    $('#slider').css({
+        width: slideWidth,
+        height: slideHeight
+    });
+    $('#slider ul').css({
+        width: sliderUlWidth,
+        marginLeft: -slideWidth
+    });
+    $('#slider ul li:last-child').prependTo('#slider ul');
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: +slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    function moveRight() {
+        $('#slider ul').animate({
+            left: -slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+});
+</script>
+
+ <main>
+
+             <center>
+     <h3>Os melhores exames você encontra aqui.</h3></center>
+
+ 	<ul class="produtos">
+            <li>
+                <h2>Colester</h2>
+                <img src="imagem/core.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+            <li>
+                <h2>Radiografia</h2>
+                <img src="imagem/radio.jpeg">
+                <p class="produo-descricao"> </p>
+               
+            </li>
+            <li>
+                <h2>Dna</h2>
+                <img src="imagem/dna.jpeg">
+                <p class="produto-descricao"></p>
+                
+            </li>
+
+           </ul>
+
+
+    </main>
+<main>
+    
+
+<ul class="produtos">
+
+      <li>
+                <h2>Exame de vista</h2>
+                <img src="imagem/visao.jpeg">
+                <p class="produto-descricao"></p>
+                
+            </li>
+            <li>
+                <h2>Exame de fezes</h2>
+                <img src="imagem/reme.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+            <li>
+                <h2>Glicose</h2>
+                <img src="imagem/lab.jpeg">
+                <p class="produto-descricao"></p>
+               
+            </li>
+    
+
+</ul>
+</main>
+
+
+
+
+<div class="footer">
+  
+   <td > <div class="middle"><a  class="btn btn2"  href="file:///C:/Users/Usuario/Desktop/TCC2.0/teste222.html">Login</a>
+  </div>
+<div class="column">
+    <h2>Horario de funcionamento</h2>
+    <p>Das 7:00 da manhã ás 08:00 horas da noite.</p>
+  </div>
+  <div class="column">
+    <h2>Numero de telefone</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec 0000-0000.</p>
+  </div>
+</div>
+
+
+</body>
+</html>
