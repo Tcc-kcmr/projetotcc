@@ -1,16 +1,14 @@
 //Script para tratar a página de MarcarExames
 
 var request = "";
-var horarios = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00', '13:00:00', '13:30:00', '14:00:00'];
-//var mostrar = ['08:00:00', '08:30:00'];
-var disponivel = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00', '13:00:00', '13:30:00', '14:00:00'];
+var horarios = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00', '13:00:00', '13:30:00', '14:00:00', '14:30:00', '15:00:00', '15:30:00', '16:00:00', '16:30:00'];
+var disponivel = ['08:00:00', '08:30:00', '09:00:00', '09:30:00', '10:00:00', '10:30:00', '11:00:00', '11:30:00', '13:00:00', '13:30:00', '14:00:00', '14:30:00', '15:00:00', '15:30:00', '16:00:00', '16:30:00'];
 var retornancia;
 
 //tratar data como uma data
 //data = new Date(document.getELementsById().value)
 //tratar o campo CPF, para receber apenas 14 números, e calcular se o cpf é válido
 //tratar o campo de e-mail, para ter @ e .com
-//completar os vetores horarios e disponivel
 //tratar o erro de hor_fim
 
 function SelecionarData(){
@@ -178,14 +176,13 @@ function EnviarFormulario(){
         request.send(str_JSON);
         request.onload = function() {
             if(request.status == 200){
-                console.log(request.response);
                 retornancia = JSON.parse(request.response);
-                console.log(retornancia);
+                if(retornancia == 1){
+                    alert("Consulta marcada com sucesso!");
+                }else{
+                    alert("Falha! Sua consulta não foi marcada, tente denovo!");
+                }
             }
-        //ExibirFormulario()
-    }
-
-        //console.log(formulario);
-        //testar se o objeto deu certo
+        }  
     }
 }
