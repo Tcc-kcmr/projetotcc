@@ -28,19 +28,12 @@ function SelecionarData(){
         request.setRequestHeader("Content-type", "application/json");
         request.send(str_json);
         request.onload = function() {
-            //disponivel = []; ATENÇÃO!!!
             if(request.status == 200){
                 var retorno = JSON.parse(request.response);
-                //console.log(retorno[1]);
                 for(var i=0; i<=horarios.length-1; i++){
                     for(var ii=0; ii<=retorno.length-1; ii++){
-                        //console.log('retorno['+ii+']: '+retorno[ii]['ocupado']);
-                        //console.log('horarios['+i+']: '+horarios[i]);
                         if(horarios[i] == retorno[ii]["ocupado"]){
-                            //console.log(disponivel[1]);
                             disponivel.splice(ii,1);
-                            //console.log(disponivel);
-                            //disponivel[disponivel.length] = horarios[i];
                         }
                     }
                 }
@@ -53,7 +46,6 @@ function SelecionarData(){
 function Exibir(){
     var html = "";
     var tag = "";
-    //console.log(disponivel);
 
     for(var i=0; i<=disponivel.length-1; i++){
         tag = tag+" "+"<option value='"+disponivel[i]+"'>"+disponivel[i]+"</option>";
@@ -107,18 +99,6 @@ function ExibirExames(){
     document.getElementById('exames').innerHTML=html;
 }
 
-function HoraFim(){
-    hora_ini = new Date(document.getElementById('horas').value);
-    alert(hora_ini);
-    hora_fim = new Date;
-
-    hora_ini.setHours(document.getElementById('horas').value);
-    hora_fim.setMinutes(hora_ini.getMinutes + 30);
-
-
-    //hora_ini = hora_ini.getHours(document.getElementById('horas').value);
-}
-
 function HoraFim(hor_ini, data){
     hor_ini_result = hor_ini.split("");
     data_result = data.split("");
@@ -138,7 +118,6 @@ function HoraFim(hor_ini, data){
     return fim;
 
 }
-
 
 function EnviarFormulario(){
     
