@@ -8,7 +8,7 @@ header("Content-type: application/json");
 
 $dados = [];
 
-if($_SERVER['REQUEST_METHOD'] == "GET"){
+if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     $Dados = json_decode(file_get_contents('php://input'), true);
 
@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
         include 'Conexao.php'; 
         $data = $Dados["data"];
 
-        $sql = "SELECT p.nome AS nome, p.telefone AS telefone, p.email AS email, s.data AS data, s.hor_ini AS hor_ini, es.nome AS especialidade  FROM pessoa AS p INNER JOIN paciente AS pa ON (p.id = pa.id_pessoa) INNER JOIN servico AS s ON (pa.id_pessoa = s.id_paciente) INNER JOIN especialidade AS es ON (es.id = s.id_especialidade) WHERE s.nome = 'consulta' AND s.data = ''";
+        $sql = "SELECT p.nome AS nome, p.telefone AS telefone, p.email AS email, s.data AS data, s.hor_ini AS hor_ini, es.nome AS especialidade  FROM pessoa AS p INNER JOIN paciente AS pa ON (p.id = pa.id_pessoa) INNER JOIN servico AS s ON (pa.id_pessoa = s.id_paciente) INNER JOIN especialidade AS es ON (es.id = s.id_especialidade) WHERE s.nome = 'consulta' AND s.data = '$data'";
        
         $resultado = mysqli_query($conexao, $sql);
 
