@@ -1,25 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8"/>
+
+     <meta charset="UTF-8"/>
     <meta http-equiv="cache-control" content="max-age=0" />
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Marcar Exames</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="../JS/script.js"></script>
+    <title></title>
+
+   <link rel="stylesheet" type="text/css" href="estilosegundo.css">
+
+
 </head>
 <body>
-    <section>
+<table>
+<tr>
+   <td><img  width="100" height="100" src='imagens/Logo.jpg'/></td>
+    
+    <td> <h1>CLÍNICA MÉDICA JEQUITIBÁ </h1></td> </tr>
+
+</table>
+<nav>
+   <a href="clinica.html">Home</a>
+   <a href="formpage.html">Feedback</a>
+   <a href="contato.html">Fale conosco</a>
+   <a href="ALBUM.html">Especialistas</a>
+   <a href="Agendar.html">Marcar Exame/consulta</a>
+   <div class="animation start-home"></div>
+</nav>
+
+
+</div>
+     <section>
         <h1> Marque seus Exames </h1>
-        <h2> Primeiro, selecione o dia em que você quer marcar seu exame, e depois, o horário </h2>
+        <center><h2> Primeiro, selecione o dia em que você quer marcar seu exame, e depois, o horário: </h2></center>
         <input id="data" type="date" value="">
-        <button onclick="SelecionarData()" >Próximo</button><br>
+        <button onclick="SelecionarData()"  class="btn btn2" >Próximo</button><br>
         <div id="horarios"></div>
         <div id="formulario"></div> 
         <div id="exames"></div>
     </section>
+
+
+
+
 </body>
 </html>
